@@ -25,15 +25,15 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>
-                    <li tabIndex={0}>
+                    <Link to='/'><li><a>Home</a></li></Link>
+                    <Link to='/blog'> <li tabIndex={0}>
                         <a>Blog</a>
-                    </li>
-                    <li><a>Contact</a></li>
+                    </li></Link>
+                    <Link to='contact'><li><a>Contact</a></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Login</a>
+                <Link to='/login'> <a className="btn">Login</a></Link>
             </div>
         </div>
     );
