@@ -3,10 +3,10 @@ import React from 'react';
 const PhotGallery = () => {
     return (
         <div>
-            <div className='mt-5'>
+            <div className='m-10'>
                 <h2 className='text-center text-4xl font-bold'>Photo Gallery</h2>
             </div>
-            <div class=" mx-auto px-5 py-2 lg:px-32 lg:pt-24">
+            <div class=" mx-auto px-5 py-2 lg:px-32 ">
                 <div class="-m-1 flex flex-wrap md:-m-2">
                     <div class="flex w-1/2 flex-wrap">
                         <div class="w-1/2 p-1 md:p-2">

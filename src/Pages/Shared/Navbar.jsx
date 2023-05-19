@@ -20,11 +20,11 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li><a>Home</a></li>
-                        <li tabIndex={0}>
-                            <a className="justify-between">Blogs</a>
-                        </li>
-                        <li><a>Contact</a></li>
+                    <Link to='/'><li><a>Home</a></li></Link>
+                    <Link to='/blog'> <li tabIndex={0}>
+                        <a>Blog</a>
+                    </li></Link>
+                    <Link to='contact'><li><a>Contact</a></li></Link>
                     </ul>
                 </div>
                 <Link to={'/'}> <div className='flex align-middle gap-2'>
@@ -46,7 +46,7 @@ const Navbar = () => {
             <div className="navbar-end flex gap-3">
                 {
                     user &&
-                    <div className="avatar">
+                    <div className="avatar online">
                         <div className="w-18 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                             <img title={user.displayName} style={{ height: '3rem' }} src={user.photoURL} />
                         </div>
