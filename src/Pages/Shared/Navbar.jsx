@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../assets/7579208_42318-removebg-preview.png'
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 const Navbar = () => {
+
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then()
+            .catch(error => console.log(error));
+    }
+
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -32,9 +42,22 @@ const Navbar = () => {
                     <Link to='contact'><li><a>Contact</a></li></Link>
                 </ul>
             </div>
-            <div className="navbar-end">
-                <Link to='/login'> <a className="btn">Login</a></Link>
+
+            <div className="navbar-end flex gap-3">
+                {
+                    user &&
+                    <div className="avatar">
+                        <div className="w-18 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                            <img title={user.displayName} style={{ height: '3rem' }} src={user.photoURL} />
+                        </div>
+                    </div>
+                }
+
+                {user ? <button onClick={handleLogOut} className="btn">Log Out</button> :
+                    <Link to='/login'> <button className="btn">Login</button></Link>}
+
             </div>
+
         </div>
     );
 };
