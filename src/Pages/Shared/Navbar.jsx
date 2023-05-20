@@ -21,6 +21,8 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                     <Link to='/'><li><a>Home</a></li></Link>
+                    <Link to='/alltoy'><li><a>All Toys</a></li></Link>
+                    <Link to='/addtoy'><li><a>Add Toy</a></li></Link>
                     <Link to='/blog'> <li tabIndex={0}>
                         <a>Blog</a>
                     </li></Link>
@@ -36,28 +38,29 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <Link to='/'><li><a>Home</a></li></Link>
+                    <Link to='/alltoy'><li><a>All Toys</a></li></Link>
+                    <Link to='/addtoy'><li><a>Add Toy</a></li></Link>
                     <Link to='/blog'> <li tabIndex={0}>
                         <a>Blog</a>
                     </li></Link>
                     <Link to='contact'><li><a>Contact</a></li></Link>
                 </ul>
             </div>
-
             <div className="navbar-end flex gap-3">
                 {
                     user &&
                     <div className="avatar online">
                         <div className="w-18 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img title={user.displayName} style={{ height: '3rem' }} src={user.photoURL} />
+                            <img title={user.displayName} style={{ height: '2rem' }} src={user.photoURL} />
                         </div>
                     </div>
                 }
+
 
                 {user ? <button onClick={handleLogOut} className="btn">Log Out</button> :
                     <Link to='/login'> <button className="btn">Login</button></Link>}
 
             </div>
-
         </div>
     );
 };
