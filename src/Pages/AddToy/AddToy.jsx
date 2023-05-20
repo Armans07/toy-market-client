@@ -2,12 +2,22 @@ import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
 
-
 const AddToy = () => {
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = (data) => {
+        fetch("http://localhost:5000/addtoy", {
+            method: "POST",
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+        console.log(data);
+    }
 
     return (
         <div className='p-24'>
@@ -34,7 +44,6 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                {/* form supplier and taste row */}
                 <div className='md:flex gap-1 mb-4'>
                     <div className="form-control md:w-1/2">
                         <label className="label">
@@ -55,7 +64,6 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                {/* form category and details row */}
                 <div className='md:flex gap-1 mb-4'>
                     <div className="form-control md:w-1/2">
                         <label className="label">
@@ -94,9 +102,8 @@ const AddToy = () => {
                         </label>
                     </div>
                 </div>
-                {/* form row */}
-                <div className='mb-8'>
-                    <div className="form-control w-full">
+                <div className='flex gap-2 mb-8'>
+                    <div className="form-control w-1/2">
                         <label className="label">
                             <span className="label-text">Toy Picture</span>
                         </label>
@@ -105,7 +112,24 @@ const AddToy = () => {
                             <input type="text" placeholder="Photo URL" className="input input-bordered w-full" {...register("photoURL")} />
                         </label>
                     </div>
+                    <div className="form-control w-1/2">
+                        <label className="label">
+                            <span className="label-text">Sub Category</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Category</span>
+                            <select className="input input-bordered w-full" {...register("category")}>
+                                
+                                <option></option>
+                                <option value="science kits">science kits</option>
+                                <option value="math learning toys">math learning toys</option>
+                                <option value="engineering kits">engineering kits</option>
+                            
+                            </select>
+                        </label>
+                    </div>
                 </div>
+               
                 <input type="submit" value="Submit" className='btn btn-block' />
             </form>
         </div>

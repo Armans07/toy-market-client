@@ -3,6 +3,7 @@ import Banner from './Banner';
 import PhotGallery from './PhotoGallery/PhotGallery';
 import ExtraSection from './ExtraSection/ExtraSection';
 const Home = () => {
+   
     return (
         <div>
             <Banner></Banner>
