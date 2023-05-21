@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const MyToy = () => {
     const { user } = useContext(AuthContext)
     const [myToys, setMyToys] = useState([]);
-
+    const [control, setControl] = useState(false)
     useEffect(() => {
         fetch(`https://toy-market-server-sigma.vercel.app/mytoy/${user?.email}`)
             .then(res => res.json())
@@ -15,7 +15,7 @@ const MyToy = () => {
 
 
             });
-    }, [user])
+    }, [user, control])
 
     const handleDelete = id => {
         const proceed = confirm('Are sure want to delete your data')
@@ -32,9 +32,9 @@ const MyToy = () => {
                             text: 'Toy Delete successfully',
                             icon: 'success',
                             confirmButtonText: 'Done'
-                            
+
                         })
-                        const remaining = myToys.filter(myToy=>myToy._id != id)
+                        const remaining = myToys.filter(myToy => myToy._id != id)
                         setMyToys(remaining)
                     }
 
@@ -43,26 +43,24 @@ const MyToy = () => {
     }
 
 
-    const handleUpdateConfirm = id => {
-        fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${id}`, {
-            method: 'PATCH',
+
+    const handleUpdateConfirm = data => {
+        fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${data._id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'applications/json'
             },
-            body: JSON.stringify({ status: 'Updated' })
-        })
+            body: JSON.stringify(data)
+        }
+        )
             .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                if (data.modifiedCount > 0) {
-                    const remaining = myToys.filter(myToy => myToy._id !== id);
-                    const update = myToys.find(myToy => myToy._id === id);
-                    update.status = 'Update'
-                    const newBookings = [update, ...remaining];
-                    setMyToys(newBookings);
+            .then(result => {
+                if (result.modifiedCount > 0) {
+                    setControl(!control)
                 }
             })
     }
+
 
     return (
         <div className='container mx-auto'>
