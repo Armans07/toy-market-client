@@ -11,7 +11,7 @@ const MyToyCard = ({ myToy, handleDelete }) => {
             <td>$ {toyPrice}</td>
             <td>{availableQuantity}</td>
             <td>
-                <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Update</button>
+                <button  className="btn btn-ghost btn-xs">Update</button>
                 <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
             </td>
 

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import MyToyCard from './MyToyCard';
+import Swal from 'sweetalert2';
 
 const MyToy = () => {
     const { user } = useContext(AuthContext)
@@ -11,6 +12,7 @@ const MyToy = () => {
             .then(res => res.json())
             .then(result => {
                 setMyToys(result)
+
 
             });
     }, [user])
@@ -24,11 +26,15 @@ const MyToy = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)
-                    if (data.deletedCount) {
-                        alert('Deleted Confirm')
-                        const remaining = bookings.filter(booking => booking._id !== id)
-                        setMyToys(remaining)
+                    if (data?.deletedCount) {
+                        Swal.fire({
+                            title: 'Delete!',
+                            text: 'Toy Delete successfully',
+                            icon: 'success',
+                            confirmButtonText: 'Done'
+                        })
                     }
+
                 })
         }
     }

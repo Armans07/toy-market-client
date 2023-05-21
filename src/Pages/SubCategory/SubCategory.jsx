@@ -1,6 +1,7 @@
 import React from 'react';
 
 const SubCategory = () => {
+  
     return (
         <div>
             <h2 className='text-center text-4xl font-bold my-5'>Choose Another Category</h2>

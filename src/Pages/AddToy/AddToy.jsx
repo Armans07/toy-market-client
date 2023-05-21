@@ -1,11 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    
     const onSubmit = (data) => {
         fetch("https://toy-market-server-sigma.vercel.app/addtoy", {
             method: "POST",
@@ -15,6 +17,14 @@ const AddToy = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                if (result?.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
             })
         console.log(data);
     }
@@ -123,12 +133,12 @@ const AddToy = () => {
                                 <option value="science kits">science kits</option>
                                 <option value="math learning toys">math learning toys</option>
                                 <option value="engineering kits">engineering kits</option>
-                            
+
                             </select>
                         </label>
                     </div>
                 </div>
-               
+
                 <input type="submit" value="Add Toy" className='btn btn-block' />
             </form>
         </div>
