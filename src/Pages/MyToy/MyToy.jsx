@@ -11,9 +11,27 @@ const MyToy = () => {
             .then(res => res.json())
             .then(result => {
                 setMyToys(result)
-                
+
             });
     }, [user])
+
+    const handleDelete = id => {
+        const proceed = confirm('Are sure want to delete your data')
+        if (proceed) {
+            fetch(`https://toy-market-server-sigma.vercel.app/remove/${id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.deletedCount) {
+                        alert('Deleted Confirm')
+                        const remaining = bookings.filter(booking => booking._id !== id)
+                        setMyToys(remaining)
+                    }
+                })
+        }
+    }
 
     return (
         <div className='container mx-auto'>
@@ -37,6 +55,7 @@ const MyToy = () => {
                             myToys?.map(myToy => <MyToyCard
                                 key={myToy._id}
                                 myToy={myToy}
+                                handleDelete={handleDelete}
                             >
                             </MyToyCard>)
                         }

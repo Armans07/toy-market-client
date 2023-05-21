@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MyToyCard = ({ myToy }) => {
+const MyToyCard = ({ myToy, handleDelete }) => {
 
-    const { toyPrice, toyName, availableQuantity, category } = myToy
+    const { _id, toyPrice, toyName, availableQuantity, category } = myToy
     return (
         <tr>
 
@@ -12,7 +12,7 @@ const MyToyCard = ({ myToy }) => {
             <td>{availableQuantity}</td>
             <td>
                 <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Update</button>
-                <button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
             </td>
 
         </tr>
