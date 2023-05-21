@@ -7,7 +7,7 @@ const AddToy = () => {
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/addtoy", {
+        fetch("https://toy-market-server-sigma.vercel.app/addtoy", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
@@ -119,7 +119,6 @@ const AddToy = () => {
                         <label className="input-group">
                             <span>Category</span>
                             <select className="input input-bordered w-full" {...register("category")}>
-                                
                                 <option></option>
                                 <option value="science kits">science kits</option>
                                 <option value="math learning toys">math learning toys</option>
@@ -130,7 +129,7 @@ const AddToy = () => {
                     </div>
                 </div>
                
-                <input type="submit" value="Submit" className='btn btn-block' />
+                <input type="submit" value="Add Toy" className='btn btn-block' />
             </form>
         </div>
     );

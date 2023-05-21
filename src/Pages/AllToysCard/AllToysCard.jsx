@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AllToysCard = ({ toy }) => {
-    const { toyPrice, toyName, availableQuantity, category} = toy
+    const { toyPrice, toyName, availableQuantity, category } = toy
     return (
         <tr>
 

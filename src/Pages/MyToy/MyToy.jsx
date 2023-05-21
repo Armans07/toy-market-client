@@ -1,16 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import AllToysCard from '../AllToysCard/AllToysCard';
+import React, { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import MyToyCard from './MyToyCard';
 
-const AllToys = () => {
-    const [toys, setToys] = useState([]);
+const MyToy = () => {
+    const { user } = useContext(AuthContext)
+    const [myToys, setMyToys] = useState([]);
 
     useEffect(() => {
-        fetch("https://toy-market-server-sigma.vercel.app/alltoy")
+        fetch(`https://toy-market-server-sigma.vercel.app/mytoy/${user?.email}`)
             .then(res => res.json())
             .then(result => {
-                setToys(result)
+                setMyToys(result)
+                
             });
-    }, [])
+    }, [user])
 
     return (
         <div className='container mx-auto'>
@@ -31,11 +34,11 @@ const AllToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys?.map(toy => <AllToysCard
-                                key={toy._id}
-                                toy={toy}>
-
-                            </AllToysCard>)
+                            myToys?.map(myToy => <MyToyCard
+                                key={myToy._id}
+                                myToy={myToy}
+                            >
+                            </MyToyCard>)
                         }
                     </tbody>
                 </table>
@@ -44,4 +47,4 @@ const AllToys = () => {
     );
 };
 
-export default AllToys;
+export default MyToy;
