@@ -45,10 +45,10 @@ const MyToy = () => {
 
 
     const handleUpdateConfirm = data => {
-        fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${data._id}`, {
+        fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${data?._id}`, {
             method: 'PUT',
             headers: {
-                'content-type': 'applications/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(data)
         }

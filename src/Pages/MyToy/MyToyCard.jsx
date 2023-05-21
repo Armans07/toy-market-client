@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
+    const {user}=useContext(AuthContext)
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { _id, toyPrice, toyName, availableQuantity, category } = myToy
     return (
         <tr>
-
             <td> {toyName}</td>
             <td>{category}</td>
             <td>$ {toyPrice}</td>
@@ -18,8 +19,9 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
                 {/* Put this part before </body> tag */}
                 <input type="checkbox" id="my-modal-5" className="modal-toggle" />
                 <div className="modal">
-                    <form onSubmit={handleSubmit(handleUpdateConfirm)}>
-                        <div className='md:flex gap-1 mb-4'>
+                    <form  onSubmit={handleSubmit(handleUpdateConfirm)}>
+                       <div className='bg-gray-300 p-5'>
+                       <div className='md:flex gap-1 mb-4'>
                             <div className="form-control md:w-1/2">
                                 <label className="label">
                                     <span className="label-text">Toy Name</span>
@@ -126,6 +128,7 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
                         </div>
 
                         <input type="submit" value="Update Toy" className='btn btn-block' />
+                       </div>
                     </form>
                 </div>
                 <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>

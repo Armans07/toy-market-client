@@ -4,12 +4,17 @@ import loginImg from '../../assets/20547283_6310507.jpg'
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import app from '../../firebase/firebase.config';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const auth = getAuth(app)
     const googleProvider = new GoogleAuthProvider();
     const { signIn } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    console.log(location)
+
+    const from = location.state?.from?.pathname || '/'
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, googleProvider)
@@ -28,10 +33,13 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
         signIn(email, password)
             .then(result => {
                 const user = result.user;
                 console.log(user)
+
+                navigate(from,{replace: true})
             })
             .catch(error => console.log(error))
     }
