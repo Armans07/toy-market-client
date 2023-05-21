@@ -1,8 +1,9 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
 
-const MyToyCard = ({ myToy, handleDelete }) => {
-
-    const { _id, toyPrice, toyName, availableQuantity, category } = myToy
+const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const { _id, toyPrice, toyName, availableQuantity, category, status } = myToy
     return (
         <tr>
 
@@ -11,7 +12,123 @@ const MyToyCard = ({ myToy, handleDelete }) => {
             <td>$ {toyPrice}</td>
             <td>{availableQuantity}</td>
             <td>
-                <button  className="btn btn-ghost btn-xs">Update</button>
+                <button onClick={() => handleUpdateConfirm(_id)} className="btn btn-ghost btn-xs">Update</button>
+                {/* The button to open modal */}
+                <button onClick={() => handleUpdateConfirm(_id)} ><label  htmlFor="my-modal-5" className="btn btn-ghost btn-xs">Update</label></button>
+
+                {/* Put this part before </body> tag */}
+                <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+                <div className="modal">
+                <form onSubmit={handleSubmit(handleUpdateConfirm)}>
+                <div className='md:flex gap-1 mb-4'>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Toy Name</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Toy Name</span>
+                            <input type="text" placeholder="Toy Name" className="input input-bordered w-full" {...register("toyName")} defaultValue={toyName}
+                            />
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Seller Name</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Seller name</span>
+                            <input value={user?.displayName} type="text" placeholder="Seller name" className="input input-bordered w-full" {...register("sellerName")} />
+                        </label>
+                    </div>
+                </div>
+                <div className='md:flex gap-1 mb-4'>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Seller Email</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Email</span>
+                            <input value={user?.email} type="text" placeholder="Seller Email" className="input input-bordered w-full" {...register("sellerEmail")} />
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Details</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Details</span>
+                            <input type="text" placeholder="Details" className="input input-bordered w-full" {...register("details")} />
+                        </label>
+                    </div>
+                </div>
+                <div className='md:flex gap-1 mb-4'>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Ratting</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Ratting</span>
+                            <input type="number" placeholder="Ratting" className="input input-bordered w-full" {...register("ratting")} />
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Toy Price</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Price</span>
+                            <input type="text" placeholder="price" className="input input-bordered w-full" {...register("toyPrice")} />
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Available Quantity</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Quantity</span>
+                            <input type="text" placeholder="Quantity" className="input input-bordered w-full" {...register("availableQuantity")} />
+                        </label>
+                    </div>
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Car type</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Type</span>
+                            <input type="text" placeholder="Car Type" className="input input-bordered w-full" {...register("carType")} />
+                        </label>
+                    </div>
+                </div>
+                <div className='flex gap-2 mb-8'>
+                    <div className="form-control w-1/2">
+                        <label className="label">
+                            <span className="label-text">Toy Picture</span>
+                        </label>
+                        <label className="input-group">
+                            <span>PhotoURL</span>
+                            <input type="text" placeholder="Photo URL" className="input input-bordered w-full" {...register("photoURL")} />
+                        </label>
+                    </div>
+                    <div className="form-control w-1/2">
+                        <label className="label">
+                            <span className="label-text">Sub Category</span>
+                        </label>
+                        <label className="input-group">
+                            <span>Category</span>
+                            <select className="input input-bordered w-full" {...register("category")}>
+                                <option></option>
+                                <option value="science kits">science kits</option>
+                                <option value="math learning toys">math learning toys</option>
+                                <option value="engineering kits">engineering kits</option>
+
+                            </select>
+                        </label>
+                    </div>
+                </div>
+
+                <input type="submit" value="Add Toy" className='btn btn-block' />
+            </form>
+                </div>
                 <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
             </td>
 

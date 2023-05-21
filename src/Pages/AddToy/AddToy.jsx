@@ -7,7 +7,7 @@ const AddToy = () => {
     const { user } = useContext(AuthContext)
 
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    
+
     const onSubmit = (data) => {
         fetch("https://toy-market-server-sigma.vercel.app/addtoy", {
             method: "POST",
