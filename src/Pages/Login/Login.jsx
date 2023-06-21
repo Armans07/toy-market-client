@@ -21,10 +21,12 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate('/')
             })
             .catch(error => {
                 console.log('error', error.message)
             })
+           
     }
 
     const handleLogin = event => {
