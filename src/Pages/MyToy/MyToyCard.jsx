@@ -7,16 +7,17 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const { _id, toyPrice, toyName, availableQuantity, category } = myToy
     return (
+  
         <tr>
-            <td> {toyName}</td>
-            <td>{category}</td>
-            <td>$ {toyPrice}</td>
-            <td>{availableQuantity}</td>
-            <td>
-                {/* The button to open modal */}
-                <button onClick={() => handleUpdateConfirm(_id)} ><label htmlFor="my-modal-5" className="btn btn-ghost btn-xs">Update</label></button>
+        <td>{toyName}</td>
+        <td>{category}</td>
+        <td>$ {toyPrice}</td>
+        <td>{availableQuantity}</td>
+        <td>
+                
+                <button onClick={() => handleUpdateConfirm(_id)} ><label htmlFor="my-modal-5" className="btn btn-ghost bg-blue-950 text-white font-semibold btn-xs me-2">Update</label></button>
 
-                {/* Put this part before </body> tag */}
+                
                 <input type="checkbox" id="my-modal-5" className="modal-toggle" />
                 <div className="modal">
                     <form  onSubmit={handleSubmit(handleUpdateConfirm)}>
@@ -131,10 +132,9 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
                        </div>
                     </form>
                 </div>
-                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs bg-blue-950 text-white font-semibold">Delete</button>
             </td>
-
-        </tr>
+      </tr>
     );
 };
 

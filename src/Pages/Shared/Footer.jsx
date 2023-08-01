@@ -1,21 +1,21 @@
 import React from 'react';
-import logo from '../../assets/7579208_42318-removebg-preview.png'
+import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer text-white font-extrabold p-10 bg-blue-950 ">
                 <div>
                     <span className="footer-title">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
+                    <a href='/addtoy' className="link link-hover">Add Toy</a>
+                    <a href='updateToy' className="link link-hover">Update Toy</a>
+                    <a href='/mytoy' className="link link-hover">My Toy</a>
 
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
-                    <a className="link link-hover">About us</a>
-                    <a className="link link-hover">Contact</a>
-                </div>
+                   <a href='blog' className="link link-hover">About us</a>
+                    <a href='contact' className="link link-hover">Contact</a>
+               </div>
                 <div>
                     <span className="footer-title">Legal</span>
                     <a className="link link-hover">Terms of use</a>
@@ -23,8 +23,8 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
-            <p className='pb-2 text-center bg-base-200'>Copyright © 2023 - All right reserved by Toy Shop</p>
-            <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+            <p className='pb-2 text-center text-white bg-blue-950'>Copyright © 2023 - All right reserved by Toy Shop</p>
+            <footer className="footer px-10 py-4 border-t bg-blue-950 text-white border-base-300">
                 <div className="items-center grid-flow-col">
                     <img className='w-14 h-18' src={logo} alt="" />
                     <p>Toy Shop<br />Providing reliable tech since 2023</p>

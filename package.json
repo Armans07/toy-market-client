@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@material-tailwind/react": "^2.0.8",
     "daisyui": "^2.51.6",
+    "emailjs-com": "^3.2.0",
     "firebase": "^9.22.0",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -19,7 +21,12 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.10.1",
+    "react-moving-text": "^0.0.7",
+    "react-rating": "^2.0.5",
     "react-router-dom": "^6.11.2",
+    "react-slick": "^0.29.0",
+    "react-tabs": "^6.0.2",
+    "slick-carousel": "^1.8.1",
     "sort-by": "^1.2.0",
     "sweetalert2": "^11.7.5"
   },

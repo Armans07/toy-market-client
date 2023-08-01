@@ -1,20 +1,25 @@
+import { Button, CardFooter } from '@material-tailwind/react';
 import React from 'react';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AllToysCard = ({ toy }) => {
-    const { toyPrice, toyName, availableQuantity, category } = toy
+    const { _id, toyPrice, toyName, availableQuantity, category } = toy
     return (
-        <tr>
+        <div className="bg-white rounded-lg shadow-md p-4">
+            <h2 className="text-xl font-semibold mb-2">{toyName}</h2>
+            <p className="text-gray-600 mb-2">Category: {category}</p>
+            <p className="text-gray-600 mb-2">Price: ${toyPrice}</p>
+            <p className="text-gray-600 mb-2">Available Quantity: {availableQuantity}</p>
 
-            <td> {toyName}</td>
-            <td>{category}</td>
-            <td>$ {toyPrice}</td>
-            <td>{availableQuantity}</td>
-            <td>
-                <Link to="/viewDetails"><button onClick={() => handleBookingConfirm(_id)} className="btn btn-ghost btn-xs">View Details</button></Link>
-                </td>
 
-        </tr>
+            
+                <div className='flex justify-end'>
+                <Link className='flex gap-1 items-center' to={`/singleData/${_id}`}><p className='text-xs font-extrabold text-blue-950'>View Details</p><span ><FaArrowAltCircleRight className='h-8 w-6'></FaArrowAltCircleRight></span></Link>
+                </div>
+            
+
+        </div>
     );
 };
 

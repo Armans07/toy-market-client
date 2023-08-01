@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
     const { createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || '/';
+    
 
     const handleRegister = event => {
         event.preventDefault();
@@ -20,6 +24,8 @@ const Register = () => {
                 const user = result.user;
                 updateUserProfile(user, name, photoUrl);
                 console.log(user);
+                navigate(from, { replace: true });
+                
             })
             .catch(error => console.log(error))
 

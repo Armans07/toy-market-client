@@ -157,22 +157,28 @@ const Login = () => {
 
                         <div className="mb-4">
                             <label className="block mb-2 text-sm font-extrabold text-gray-800 ">Email address</label>
-                            <input
-                                type="text"
-                                name="email"
-                                placeholder="Enter your email"
-                                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:outline-none focus:border-blue-500"
-                            />
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                            </svg>
+                            <input class="pl-2 outline-none border-none"   id="" placeholder="Email Address"  type="text" name='email' required />
+                            
+                        </div>
                         </div>
 
                         <div className="mb-6">
                             <label className="block mb-2 text-sm font-bold text-gray-800">Password</label>
-                            <input
-                                type="password"
-                                name="password"
-                                placeholder="Enter your password"
-                                className="w-full px-4 py-2 text-gray-700 bg-gray-100 border rounded-lg focus:outline-none focus:border-blue-500"
-                            />
+                            <div class="flex items-center border-2 py-2 px-3 rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <input class="pl-2 outline-none border-none" type="password" name='password' placeholder="password" />
+                        </div>
                         </div>
 
                         <div class="text-right mt-2">
@@ -202,7 +208,7 @@ const Login = () => {
                         </div>
                     </button>
 
-                    <p class="mt-8">Need an account? <a href="register" class="text-blue-500 hover:text-blue-700 font-semibold">Create an
+                    <p className="text-sm mt-2 text-center">Need an account? <a href="register" class="text-blue-500 hover:text-blue-700 font-semibold">Create an
                         account</a></p>
 
 
