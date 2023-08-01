@@ -23,7 +23,7 @@ const Navbar = () => {
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
 
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 text-blue-900 font-extrabold rounded-box w-52">
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 text-blue-950 font-extrabold rounded-box w-52">
                         <Link to='/'><li><a>Home</a></li></Link>
                         <Link to='/alltoy'><li><a>All Toys</a></li></Link>
                         <Link to='/addtoy'><li><a>Add Toy</a></li></Link>
@@ -38,19 +38,19 @@ const Navbar = () => {
                 <Link to='/'>
                     <div className='flex items-center justify-center'>
                         <img className='w-14 h-14' src={logo} alt="" />
-                        <p className='font-extrabold'>Toy Shop</p>
+                        <p className='font-semibold'>Toy Shop</p>
                     </div></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <Link to='/'><li><a className="hover:text-black font-extrabold">Home</a></li></Link>
-                    <Link to='/alltoy'><li ><a className="hover:text-black font-extrabold">All Toys</a></li></Link>
-                    <Link to='/addtoy'><li><a className="hover:text-black font-extrabold">Add Toy</a></li></Link>
-                    <Link to='/mytoy'><li><a className="hover:text-black font-extrabold">My Toy</a></li></Link>
+                    <Link to='/'><li><a className="hover:text-black font-semibold">Home</a></li></Link>
+                    <Link to='/alltoy'><li ><a className="hover:text-black font-semibold">All Toys</a></li></Link>
+                    <Link to='/addtoy'><li><a className="hover:text-black font-semibold">Add Toy</a></li></Link>
+                    <Link to='/mytoy'><li><a className="hover:text-black font-semibold">My Toy</a></li></Link>
                     <Link to='/blog'> <li tabIndex={0}>
-                        <a className="hover:text-black font-extrabold">About Us</a>
+                        <a className="hover:text-black font-semibold">About Us</a>
                     </li></Link>
-                    <Link to='contact'><li><a className="hover:text-black font-extrabold">Contact</a></li></Link>
+                    <Link to='contact'><li><a className="hover:text-black font-semibold">Contact</a></li></Link>
                 </ul>
             </div>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
                     <Link to='/login'> <button
                         className="btn btn-sm btn-ghost hover:scale-105"
                     >
-                        <span className='font-extrabold'>Login</span>
+                        <span className='font-semibold'>Login</span>
                         <HiLogin className='ms-2'></HiLogin>
                     </button></Link>}
 

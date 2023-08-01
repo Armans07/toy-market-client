@@ -31,7 +31,7 @@ const AddToy = () => {
 
     return (
         <div className='p-24'>
-            <h2 className='font-extrabold text-3xl text-center mb-5'>Add Toy</h2>
+            <h2 className='font-semibold text-3xl text-center mb-5'>Add Toy</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className='md:flex gap-1 mb-4'>
                     <div className="form-control md:w-1/2">

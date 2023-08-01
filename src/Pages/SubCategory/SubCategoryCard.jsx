@@ -16,7 +16,7 @@ const SubCategoryCard = ({ item }) => {
         //         <p>Ratings: {rating}</p>
         //         <div className="card-actions">
         //             <Link to={`/singleData/${_id}`}>
-        //                 <button className="btn btn-accent font-semibold">View Details</button>
+        //                 <button className="btn btn-accent font-semisemibold">View Details</button>
         //             </Link>
         //         </div>
         //     </div>
@@ -36,13 +36,13 @@ const SubCategoryCard = ({ item }) => {
                    {toyName}
                 </Typography>
                 <Typography>
-                   <p className='font-bold'>Price: {toyPrice}</p>
-                   <p className='font-bold'>Ratting: {rating}</p>
+                   <p className='font-semibold'>Price: {toyPrice}</p>
+                   <p className='font-semibold'>Ratting: {rating}</p>
                 </Typography>
             </CardBody>
             <div className='flex pb-2 justify-end hover:scale-110'>
              <Link to={`/singleData/${_id}`}>  <Button variant="text" className="flex items-center gap-2 text-blue-950">
-                        show More
+                        <span className='text-sm font-extrabold'>show More</span>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"

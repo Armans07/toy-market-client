@@ -23,7 +23,7 @@ const SubCategory = () => {
 
     return (
         <div>
-            <h2 className='text-center text-3xl font-extrabold text-blue-900 my-5'>Choose Another Category</h2>
+            <h2 className='text-center text-3xl font-semibold text-blue-900 my-5'>Choose Another Category</h2>
             <div className='mx-auto flex justify-center items-center'>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList className="text-center underline ">

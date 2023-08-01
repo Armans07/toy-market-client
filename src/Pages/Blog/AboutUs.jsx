@@ -6,7 +6,7 @@ const AboutUs = () => {
       <div className="container mx-auto px-4">
         <div className="md:flex md:flex-row md:justify-center md:items-center">
           <div className="md:w-1/2 md:mr-8">
-            <h2 className="text-3xl font-semibold text-white mb-4">
+            <h2 className="text-3xl font-semisemibold text-white mb-4">
             Welcome to our Toy Shop!
             </h2>
             <p className="text-white text-lg mb-6">

@@ -3,7 +3,7 @@ import logo from '../../assets/logo.png'
 const Footer = () => {
     return (
         <div>
-            <footer className="footer text-white font-extrabold p-10 bg-blue-950 ">
+            <footer className="footer text-white font-semibold p-10 bg-blue-950 ">
                 <div>
                     <span className="footer-title">Services</span>
                     <a href='/addtoy' className="link link-hover">Add Toy</a>

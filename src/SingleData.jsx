@@ -19,49 +19,62 @@ const SingleData = () => {
     }, [])
 
     return (
-        <Card className="w-full mx-auto my-5 max-w-[48rem] flex-row ">
-            <CardHeader
-                shadow={false}
-                floated={false}
-                className="m-0 w-2/5 shrink-0 rounded-r-none"
-            >
-                <img
-                    src={pictureURL}
-                    alt="card-image"
-                    className="h-full w-full object-cover"
-                />
-            </CardHeader>
-            <CardBody>
-                <Typography variant="h5" color="blue" className="mb-4 uppercase">
-                    {toyName}
-                </Typography>
-                <Typography variant="h4" color="blue-gray" className="mb-2">
-                    Saller name: {sellerName}
-                </Typography>
-                <Typography color="gray" className="mb-8 font-normal">
-                    {detailDescription}
-                </Typography>
-                <Typography color="gray" className="mb-8 font-normal">
-                    Saller email: {sellerEmail}
-                </Typography>
-                <Typography color="gray" className="mb-8 font-normal">
-                    Toy Price: {toyPrice}
-                </Typography>
-                <Typography color="gray" className="mb-8 font-normal">
-                    Availble Quantity: {availableQuantity}
-                </Typography>
-                <div>
-                    <Rating
-                        placeholderRating={Math.round(rating || 0)}
-                        readonly
-                        emptySymbol={<FaRegStar />}
-                        placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-                        fullSymbol={<FaStar />}
-                    ></Rating>
-                    <span className='text-yellow-500 ms-1'>{rating}</span>
-                </div>
-            </CardBody>
-        </Card>
+        // <Card className="w-full mx-auto my-5 max-w-[48rem] flex-row ">
+        //     <CardHeader
+        //         shadow={false}
+        //         floated={false}
+        //         className="m-0 w-2/5 shrink-0 rounded-r-none"
+        //     >
+        //         <img
+        //             src={pictureURL}
+        //             alt="card-image"
+        //             className="h-full w-full object-cover"
+        //         />
+        //     </CardHeader>
+        //     <CardBody>
+        //         <Typography variant="h5" color="blue" className="mb-4 uppercase">
+        //             {toyName}
+        //         </Typography>
+        //         <Typography variant="h4" color="blue-gray" className="mb-2">
+        //             Saller name: {sellerName}
+        //         </Typography>
+        //         <Typography color="gray" className="mb-8 font-normal">
+        //             {detailDescription}
+        //         </Typography>
+        //         <Typography color="gray" className="mb-8 font-normal">
+        //             Saller email: {sellerEmail}
+        //         </Typography>
+        //         <Typography color="gray" className="mb-8 font-normal">
+        //             Toy Price: {toyPrice}
+        //         </Typography>
+        //         <Typography color="gray" className="mb-8 font-normal">
+        //             Availble Quantity: {availableQuantity}
+        //         </Typography>
+
+        //     </CardBody>
+        // </Card>
+        <div className="card bg-base-100 shadow-xl m-10">
+    <figure><img src={pictureURL} alt="Album" /></figure>
+    <div className="card-body text-center">
+        <h2 className="text-center font-extrabold text-2xl underline mb-2">{toyName}</h2>
+        <p><span className='font-bold'>Description: </span>{detailDescription}</p>
+        <p><span className='font-bold'>Seller name: </span>{sellerName}</p>
+        <p><span className='font-bold'>Seller email: </span>{sellerEmail}</p>
+        <p><span className='font-bold'>Toy Price: </span>{toyPrice}</p>
+        <p><span className='font-bold'>Available Quantity: </span>{availableQuantity}</p>
+        <div>
+            <Rating
+                placeholderRating={Math.round(rating || 0)}
+                readonly
+                emptySymbol={<FaRegStar />}
+                placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+                fullSymbol={<FaStar />}
+            ></Rating>
+            <span className='text-yellow-500 ms-1'>{rating}</span>
+        </div>
+    </div>
+</div>
+
     );
 }
 

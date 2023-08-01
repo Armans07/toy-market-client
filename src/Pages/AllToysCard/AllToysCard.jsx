@@ -7,7 +7,7 @@ const AllToysCard = ({ toy }) => {
     const { _id, toyPrice, toyName, availableQuantity, category } = toy
     return (
         <div className="bg-white rounded-lg shadow-md p-4">
-            <h2 className="text-xl font-semibold mb-2">{toyName}</h2>
+            <h2 className="text-xl font-semisemibold mb-2">{toyName}</h2>
             <p className="text-gray-600 mb-2">Category: {category}</p>
             <p className="text-gray-600 mb-2">Price: ${toyPrice}</p>
             <p className="text-gray-600 mb-2">Available Quantity: {availableQuantity}</p>
@@ -15,7 +15,7 @@ const AllToysCard = ({ toy }) => {
 
             
                 <div className='flex justify-end'>
-                <Link className='flex gap-1 items-center' to={`/singleData/${_id}`}><p className='text-xs font-extrabold text-blue-950'>View Details</p><span ><FaArrowAltCircleRight className='h-8 w-6'></FaArrowAltCircleRight></span></Link>
+                <Link className='flex gap-1 items-center' to={`/singleData/${_id}`}><p className='text-sm font-extrabold text-blue-950'>View Details</p><span ><FaArrowAltCircleRight className='h-8 w-6'></FaArrowAltCircleRight></span></Link>
                 </div>
             
 

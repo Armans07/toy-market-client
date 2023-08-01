@@ -15,7 +15,7 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
         <td>{availableQuantity}</td>
         <td>
                 
-                <button onClick={() => handleUpdateConfirm(_id)} ><label htmlFor="my-modal-5" className="btn btn-ghost bg-blue-950 text-white font-semibold btn-xs me-2">Update</label></button>
+                <button onClick={() => handleUpdateConfirm(_id)} ><label htmlFor="my-modal-5" className="btn btn-ghost bg-blue-950 text-white font-semisemibold btn-xs me-2">Update</label></button>
 
                 
                 <input type="checkbox" id="my-modal-5" className="modal-toggle" />
@@ -132,7 +132,7 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
                        </div>
                     </form>
                 </div>
-                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs bg-blue-950 text-white font-semibold">Delete</button>
+                <button onClick={() => handleDelete(_id)} className="btn btn-ghost btn-xs bg-blue-950 text-white font-semisemibold">Delete</button>
             </td>
       </tr>
     );

@@ -37,10 +37,10 @@ const Banner = () => {
                     class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
                 >
                     <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
-                        <h1 class="text-3xl text-black font-extrabold sm:text-5xl">
+                        <h1 class="text-3xl text-black font-semibold sm:text-5xl">
                             Let us find your
 
-                            <strong class="block font-extrabold text-blue-900">
+                            <strong class="block font-semibold text-blue-900">
                                 Forever Home.
                             </strong>
                         </h1>

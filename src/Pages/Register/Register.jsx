@@ -35,7 +35,7 @@ const Register = () => {
             {/* <form  >
                 <div className="hero min-h-screen bg-base-200 ">
                     <div className="hero-content flex-col">
-                        <h1 className="text-5xl font-bold mb-5">Please Register!</h1>
+                        <h1 className="text-5xl font-semibold mb-5">Please Register!</h1>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
 
                             <div className="card-body">
@@ -76,9 +76,9 @@ const Register = () => {
                 <div
                     class="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-blue-800 to-purple-700 i justify-around items-center hidden">
                     <div className='p-5'>
-                        <h1 class="text-white font-bold text-4xl font-sans">ToyShop</h1>
+                        <h1 class="text-white font-semibold text-4xl font-sans">ToyShop</h1>
                         <p class="text-white mt-1">The most popular toy to toy lending at SEA</p>
-                        <button type="submit" class="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold mb-2">Read More</button>
+                        <button type="submit" class="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-semibold mb-2">Read More</button>
                     </div>
                     <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
                     <div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
@@ -87,7 +87,7 @@ const Register = () => {
                 </div>
                 <div class="flex md:w-1/2 justify-center py-10 items-center bg-white">
                     <form onSubmit={handleRegister} class="bg-white">
-                        <h1 class="text-gray-800 font-bold text-2xl mb-1">Hello Again!</h1>
+                        <h1 class="text-gray-800 font-semibold text-2xl mb-1">Hello Again!</h1>
                         <p class="text-sm font-normal text-gray-600 mb-7">Welcome Back</p>
 
 
@@ -127,9 +127,9 @@ const Register = () => {
                             <input class="pl-2 outline-none border-none" type="password" name='password' placeholder="password" />
                         </div>
 
-                        <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semibold mb-2">Register</button>
+                        <button type="submit" class="block w-full bg-indigo-600 mt-4 py-2 rounded-2xl text-white font-semisemibold mb-2">Register</button>
                        
-                        <p class="mt-5">Have an account? <a href="login" class="text-blue-500 hover:text-blue-700 font-semibold">Please Login</a></p>
+                        <p class="mt-5">Have an account? <a href="login" class="text-blue-500 hover:text-blue-700 font-semisemibold">Please Login</a></p>
                     </form>
                 </div>
             </div>
