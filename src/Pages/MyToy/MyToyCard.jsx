@@ -34,8 +34,8 @@ const MyToyCard = ({ myToy, handleDelete, handleUpdateConfirm }) => {
                                         <span className="label-text">Toy Name</span>
                                     </label>
                                     <label className="input-group">
-                                        <span>Toy Name</span>
-                                        <input type="text" placeholder="Toy Name" className="input input-bordered w-full" {...register("_id")} defaultValue={_id}
+                                        <span>Id</span>
+                                        <input type="text" placeholder="Id" className="input input-bordered w-full" {...register("_id")} defaultValue={_id}
                                         />
                                     </label>
 

@@ -13,7 +13,7 @@ const AddToy = () => {
     const from = location.state?.from?.pathname || '/';
 
     const onSubmit = async (data) => {
-        await fetch("http://localhost:5000/addtoy", {
+        await fetch("https://toy-market-server-sigma.vercel.app/addtoy", {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)

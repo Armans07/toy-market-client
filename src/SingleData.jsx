@@ -11,7 +11,7 @@ const SingleData = () => {
 
 
     useEffect(() => {
-        fetch("http://localhost:5000/alltoy")
+        fetch("https://toy-market-server-sigma.vercel.app/alltoy")
             .then(res => res.json())
             .then(result => {
                 console.log(result)

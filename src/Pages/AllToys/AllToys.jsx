@@ -6,7 +6,7 @@ const AllToys = () => {
     const [searchText, setSearchText] = useState("")
 
     useEffect(() => {
-        fetch("http://localhost:5000/alltoy")
+        fetch("https://toy-market-server-sigma.vercel.app/alltoy")
             .then(res => res.json())
             .then(result => {
                 setToys(result)
@@ -16,7 +16,7 @@ const AllToys = () => {
 
     const handleSearch = () => {
         useEffect(() => {
-            fetch(`http://localhost:5000/jobsSearchByName${searchText}`)
+            fetch(`https://toy-market-server-sigma.vercel.app/jobsSearchByName${searchText}`)
                 .then(res => res.json())
                 .then(data => {
                     setToys(data)

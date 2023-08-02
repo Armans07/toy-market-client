@@ -9,7 +9,7 @@ const MyToy = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/mytoy/${user?.email}`)
+    fetch(`https://toy-market-server-sigma.vercel.app/mytoy/${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setMyToys(result);
@@ -19,7 +19,7 @@ const MyToy = () => {
   const handleDelete = (id) => {
     const proceed = confirm('Are sure want to delete your data');
     if (proceed) {
-      fetch(`http://localhost:5000/remove/${id}`, {
+      fetch(`https://toy-market-server-sigma.vercel.app/remove/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -41,7 +41,7 @@ const MyToy = () => {
 
   const handleUpdateConfirm = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/updatedToy/${data?._id}`, {
+    fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${data?._id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',

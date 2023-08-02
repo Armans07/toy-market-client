@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             {
                 path: '/singleData/:id',
                 element:<PrivetRoute><SingleData></SingleData></PrivetRoute> ,
-                loader: ({params}) => fetch(`http://localhost:5000/alltoy/${params.id}`)
+                loader: ({params}) => fetch(`https://toy-market-server-sigma.vercel.app/alltoy/${params.id}`)
               },
         ]
     },
