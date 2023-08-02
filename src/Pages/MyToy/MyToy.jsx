@@ -9,7 +9,7 @@ const MyToy = () => {
   const [control, setControl] = useState(false);
 
   useEffect(() => {
-    fetch(`https://toy-market-server-sigma.vercel.app/mytoy/${user?.email}`)
+    fetch(`http://localhost:5000/mytoy/${user?.email}`)
       .then((res) => res.json())
       .then((result) => {
         setMyToys(result);
@@ -19,7 +19,7 @@ const MyToy = () => {
   const handleDelete = (id) => {
     const proceed = confirm('Are sure want to delete your data');
     if (proceed) {
-      fetch(`https://toy-market-server-sigma.vercel.app/remove/${id}`, {
+      fetch(`http://localhost:5000/remove/${id}`, {
         method: 'DELETE',
       })
         .then((res) => res.json())
@@ -40,7 +40,8 @@ const MyToy = () => {
   };
 
   const handleUpdateConfirm = (data) => {
-    fetch(`https://toy-market-server-sigma.vercel.app/updatedToy/${data?._id}`, {
+    console.log(data);
+    fetch(`http://localhost:5000/updatedToy/${data?._id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
@@ -50,6 +51,7 @@ const MyToy = () => {
       .then((res) => res.json())
       .then((result) => {
         if (result.modifiedCount > 0) {
+          alert('Its Worked!')
           setControl(!control);
         }
       });

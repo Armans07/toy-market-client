@@ -4,7 +4,7 @@ import { FaArrowAltCircleRight } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const AllToysCard = ({ toy }) => {
-    const { _id, toyPrice, toyName, availableQuantity, category } = toy
+    const { _id, toyPrice, toyName, availableQuantity, category,detailDescription } = toy
     return (
         <div className="bg-white rounded-lg shadow-md p-4">
             <h2 className="text-xl font-semisemibold mb-2">{toyName}</h2>
@@ -15,7 +15,7 @@ const AllToysCard = ({ toy }) => {
 
             
                 <div className='flex justify-end'>
-                <Link className='flex gap-1 items-center' to={`/singleData/${_id}`}><p className='text-sm font-extrabold text-blue-950'>View Details</p><span ><FaArrowAltCircleRight className='h-8 w-6'></FaArrowAltCircleRight></span></Link>
+                <Link className='flex gap-1 items-center' to={`/singleData/${_id}`}><p className='text-sm font-extra5bold text-blue-950'>View Details</p><span ><FaArrowAltCircleRight className='h-8 w-6'></FaArrowAltCircleRight></span></Link>
                 </div>
             
 

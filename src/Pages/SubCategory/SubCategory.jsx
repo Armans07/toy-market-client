@@ -10,7 +10,7 @@ const SubCategory = () => {
     const [toys, setToys] = useState([]);
 
     useEffect(() => {
-        fetch("https://toy-market-server-sigma.vercel.app/alltoy")
+        fetch("http://localhost:5000/alltoy")
             .then(res => res.json())
             .then(result => {
                 setToys(result)

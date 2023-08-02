@@ -5,13 +5,13 @@ import Rating from 'react-rating';
 import { useLoaderData } from 'react-router-dom';
 
 const SingleData = () => {
-    const category = useLoaderData();
-    const { _id, sellerName, toyName, subCategory, sellerEmail, toyPrice, detailDescription, rating, availableQuantity, pictureURL } = category;
-    console.log(category);
+    const categorys = useLoaderData();
+    const { _id, details,sellerName, toyName, category, sellerEmail, toyPrice, detailDescription, rating, availableQuantity, pictureURL } = categorys;
+    console.log(categorys);
 
 
     useEffect(() => {
-        fetch("https://toy-market-server-sigma.vercel.app/alltoy")
+        fetch("http://localhost:5000/alltoy")
             .then(res => res.json())
             .then(result => {
                 console.log(result)
@@ -61,8 +61,9 @@ const SingleData = () => {
         <p><span className='font-bold'>Seller name: </span>{sellerName}</p>
         <p><span className='font-bold'>Seller email: </span>{sellerEmail}</p>
         <p><span className='font-bold'>Toy Price: </span>{toyPrice}</p>
+        <p><span className='font-bold'>Category: </span>{category}</p>
         <p><span className='font-bold'>Available Quantity: </span>{availableQuantity}</p>
-        <div>
+        <div className='flex justify-center items-center align-middle gap-2'>
             <Rating
                 placeholderRating={Math.round(rating || 0)}
                 readonly
@@ -70,7 +71,7 @@ const SingleData = () => {
                 placeholderSymbol={<FaStar className='text-warning'></FaStar>}
                 fullSymbol={<FaStar />}
             ></Rating>
-            <span className='text-yellow-500 ms-1'>{rating}</span>
+            <span className='text-yellow-500 '>{rating}</span>
         </div>
     </div>
 </div>
